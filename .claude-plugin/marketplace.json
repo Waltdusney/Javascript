@@ -1,0 +1,11 @@
+{
+  "name": "waltdusney-trading",
+  "owner": { "name": "waltdusney" },
+  "plugins": [
+    {
+      "name": "day-trader-skill",
+      "source": "./",
+      "description": "Pre-market scanner for day traders (/day-trader-skill:trader-scanner daily)."
+    }
+  ]
+}

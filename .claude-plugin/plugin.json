@@ -1,0 +1,6 @@
+{
+  "name": "day-trader-skill",
+  "version": "0.1.0",
+  "description": "Pre-market scanner for day traders: market regime, overnight futures, catalysts, earnings and macro calendar, built from live web research.",
+  "keywords": ["trading", "stocks", "premarket", "scanner"]
+}
