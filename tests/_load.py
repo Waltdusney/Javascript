@@ -4,7 +4,7 @@ import importlib.util
 import os
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ROOT = os.path.join(REPO, "skills")  # skill folders live under skills/ in this repo
+ROOT = os.path.join(REPO, ".claude", "skills")  # skills live in .claude/skills/ (project skills + plugin)
 FIX = os.path.join(REPO, "tests", "fixtures")
 
 

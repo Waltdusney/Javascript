@@ -6,16 +6,20 @@ Some java stuff
 This repo is also a Claude Code plugin marketplace with one plugin, `day-trader-skill`.
 It bundles the 11 skills from
 [Jakeschincariol/day-trader-skill](https://github.com/Jakeschincariol/day-trader-skill)
-(MIT, see `skills/LICENSE-day-trader-skill`) plus this repo's own `trader-premarket`.
+(MIT, see `.claude/skills/LICENSE-day-trader-skill`) plus this repo's own `trader-premarket`.
 
-Install in Claude Code:
+The skills live in `.claude/skills/`, so in any Claude Code session opened on this repo
+(including cloud sessions) they are plain slash commands: `/trader-premarket daily`,
+`/trader-scanner orb`, `/trader-news TSLA`, and so on.
+
+To use them in other projects, install the plugin:
 
 ```
 /plugin marketplace add waltdusney/javascript
 /plugin install day-trader-skill@waltdusney-trading
 ```
 
-Skills show up namespaced, e.g. `/day-trader-skill:trader-scanner`.
+Installed as a plugin they show up namespaced, e.g. `/day-trader-skill:trader-scanner`.
 
 | skill | what it does |
 | --- | --- |
