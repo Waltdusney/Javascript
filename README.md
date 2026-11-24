@@ -24,3 +24,16 @@ Files: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
 
 The scan is built from web search, not a live market-data feed, so verify prices
 before trading. It's research, not trading advice.
+
+## taste-skill (third-party, via this marketplace)
+
+The marketplace also lists [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)
+(MIT), a frontend design skill for building polished, non-generic websites. It is
+fetched from upstream on install, not copied into this repo:
+
+```
+/plugin install taste-skill@waltdusney-trading
+```
+
+It needs Node 22+ and Chrome/Chromium for its browser checks, and it adds a Stop hook
+that runs its finish gate.
