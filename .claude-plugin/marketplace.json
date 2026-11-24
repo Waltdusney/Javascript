@@ -7,7 +7,7 @@
     {
       "name": "day-trader-skill",
       "source": "./",
-      "description": "Pre-market scanner for day traders (/day-trader-skill:trader-scanner daily)."
+      "description": "12 day-trading skills: 11 from Jakeschincariol/day-trader-skill (MIT) plus trader-premarket."
     },
     {
       "name": "taste-skill",

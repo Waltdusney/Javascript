@@ -1,6 +1,6 @@
 ---
-name: trader-scanner
-description: Pre-market scan for US day traders. Builds a dated brief of market regime, prior close, overnight futures, today's movers and catalysts, earnings and macro calendar, and a watchlist, from live web research with sources. Use when the user asks for a daily scan, pre-market brief, "what's moving today", or runs /trader-scanner with a mode (daily, week, or tickers).
+name: trader-premarket
+description: Pre-market scan for US day traders. Builds a dated brief of market regime, prior close, overnight futures, today's movers and catalysts, earnings and macro calendar, and a watchlist, from live web research with sources. Use when the user asks for a daily scan, pre-market brief, "what's moving today", or runs /trader-premarket with a mode (daily, week, or tickers).
 argument-hint: "[daily | week | TICKER ...]"
 ---
 
