@@ -3,9 +3,42 @@
 @tailwind utilities;
 
 body { background: #0A0A0F; }
-.hero-bg {
-  background:
-    radial-gradient(60% 50% at 70% 30%, rgba(184, 242, 92, 0.14), transparent 70%),
-    radial-gradient(50% 60% at 20% 80%, rgba(92, 120, 242, 0.12), transparent 70%),
-    #0A0A0F;
+
+.hero-bg { background: #0A0A0F; }
+
+.glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+  will-change: transform;
+}
+.glow-a {
+  width: 60vw; height: 60vw; max-width: 900px; max-height: 900px;
+  top: -20%; right: -10%;
+  background: radial-gradient(circle, rgba(184, 242, 92, 0.22), transparent 65%);
+  animation: drift-a 22s ease-in-out infinite alternate;
+}
+.glow-b {
+  width: 55vw; height: 55vw; max-width: 800px; max-height: 800px;
+  bottom: -30%; left: -15%;
+  background: radial-gradient(circle, rgba(92, 120, 242, 0.18), transparent 65%);
+  animation: drift-b 26s ease-in-out infinite alternate;
+}
+@keyframes drift-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(-12vw, 10vh, 0) scale(1.15); }
+}
+@keyframes drift-b {
+  from { transform: translate3d(0, 0, 0) scale(1.1); }
+  to   { transform: translate3d(14vw, -8vh, 0) scale(0.95); }
+}
+
+/* Hide reveal targets only while JS is about to animate them. */
+.motion-ready [data-reveal],
+.motion-ready [data-reveal-stagger] > *,
+.motion-ready [data-hero-fade],
+.motion-ready:not(.motion-armed) [data-split] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .glow { animation: none; }
 }

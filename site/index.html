@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600&family=Inter:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('motion-ready');
+  </script>
 </head>
 <body class="bg-bg text-ink font-body antialiased text-base md:text-[17px] leading-[1.6]">
 
@@ -26,30 +29,34 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero-bg relative h-screen min-h-[640px] overflow-hidden px-6">
+  <section id="hero" class="hero-bg relative h-screen min-h-[640px] overflow-hidden px-6">
+    <div data-parallax class="absolute inset-0" aria-hidden="true">
+      <div class="glow glow-a"></div>
+      <div class="glow glow-b"></div>
+    </div>
     <div class="absolute inset-0 bg-black/30"></div>
     <div class="relative z-10 mx-auto flex h-full max-w-6xl flex-col justify-center">
-      <p class="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-accent">A Claude Code skill</p>
-      <h1 class="max-w-4xl font-display text-[44px] font-semibold leading-[1.02] tracking-[-0.035em] md:text-[88px]">
+      <p data-hero-fade class="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-accent">A Claude Code skill</p>
+      <h1 data-split class="max-w-4xl font-display text-[44px] font-semibold leading-[1.02] tracking-[-0.035em] md:text-[88px]">
         Your pre-market brief, ready before the bell.
       </h1>
-      <p class="mt-8 max-w-xl text-lg text-muted">
+      <p data-hero-fade class="mt-8 max-w-xl text-lg text-muted">
         One command scans the prior close, overnight futures, movers, earnings and the macro calendar.
         Every number comes with a date and a source.
       </p>
-      <div class="mt-10">
+      <div data-hero-fade class="mt-10">
         <a href="#install" class="inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-medium text-bg">
           Install the skill <span aria-hidden="true">→</span>
         </a>
       </div>
-      <p class="mt-6 font-mono text-sm text-muted">/day-trader-skill:trader-scanner daily</p>
+      <p data-hero-fade class="mt-6 font-mono text-sm text-muted">/day-trader-skill:trader-scanner daily</p>
     </div>
   </section>
 
   <!-- Example brief -->
   <section id="brief" class="border-t border-line px-6 py-24 md:py-32">
     <div class="mx-auto grid max-w-6xl gap-14 md:grid-cols-[1fr_1.3fr] md:items-start">
-      <div>
+      <div data-reveal>
         <h2 class="font-display text-[30px] font-semibold leading-tight tracking-[-0.025em] md:text-[48px]">
           Read the market in thirty seconds.
         </h2>
@@ -59,7 +66,7 @@
         </p>
       </div>
 
-      <figure class="rounded-2xl border border-line bg-surface p-6 font-mono text-[13px] leading-relaxed md:p-8">
+      <figure data-reveal class="rounded-2xl border border-line bg-surface p-6 font-mono text-[13px] leading-relaxed md:p-8">
         <figcaption class="mb-5 flex items-center justify-between text-xs text-muted">
           <span>Example output</span>
           <span class="rounded-full border border-line px-2.5 py-1">Illustrative, not real data</span>
@@ -93,10 +100,10 @@
   <!-- Modes -->
   <section id="modes" class="border-t border-line px-6 py-24 md:py-32">
     <div class="mx-auto max-w-6xl">
-      <h2 class="max-w-2xl font-display text-[30px] font-semibold leading-tight tracking-[-0.025em] md:text-[48px]">
+      <h2 data-reveal class="max-w-2xl font-display text-[30px] font-semibold leading-tight tracking-[-0.025em] md:text-[48px]">
         Three modes for three questions.
       </h2>
-      <div class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+      <div data-reveal-stagger class="mt-14 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
         <article class="bg-bg p-8">
           <p class="font-mono text-sm text-accent">daily</p>
           <h3 class="mt-4 font-display text-xl font-semibold tracking-tight">What's moving today?</h3>
@@ -119,7 +126,7 @@
   <!-- How it works -->
   <section id="how" class="border-t border-line px-6 py-24 md:py-32">
     <div class="mx-auto grid max-w-6xl gap-14 md:grid-cols-[1fr_1.3fr]">
-      <div>
+      <div data-reveal>
         <h2 class="font-display text-[30px] font-semibold leading-tight tracking-[-0.025em] md:text-[48px]">
           Built to admit what it doesn't know.
         </h2>
@@ -128,7 +135,7 @@
           and if it can't confirm something, it says so instead of guessing.
         </p>
       </div>
-      <ol class="divide-y divide-line border-y border-line">
+      <ol data-reveal-stagger class="divide-y divide-line border-y border-line">
         <li class="grid grid-cols-[48px_1fr] gap-4 py-6">
           <span class="font-mono text-sm text-muted">01</span>
           <div><h3 class="font-display font-semibold">Pin the date</h3><p class="mt-1 text-muted">Works out the previous trading session, NYSE holidays and whether it's pre-market or after hours.</p></div>
@@ -151,7 +158,7 @@
 
   <!-- Install -->
   <section id="install" class="border-t border-line px-6 py-24 md:py-32">
-    <div class="mx-auto max-w-3xl text-center">
+    <div data-reveal class="mx-auto max-w-3xl text-center">
       <h2 class="font-display text-[30px] font-semibold leading-tight tracking-[-0.025em] md:text-[48px]">
         Install in two commands.
       </h2>
@@ -177,6 +184,8 @@
     </div>
   </footer>
 
+  <script src="vendor/motion.js" onerror="document.documentElement.classList.remove('motion-ready')"></script>
+  <script src="motion.js"></script>
   <script>
     document.querySelectorAll('[data-copy]').forEach((btn) => {
       btn.addEventListener('click', async () => {
