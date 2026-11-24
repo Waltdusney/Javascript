@@ -24,3 +24,9 @@ Files: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`,
 
 The scan is built from web search, not a live market-data feed, so verify prices
 before trading. It's research, not trading advice.
+
+## Landing page
+
+`site/` holds the plugin's landing page (static HTML, Tailwind compiled to `styles.css`).
+Its build rules live in `site/CLAUDE.md`, so they only apply to website work.
+Rebuild styles with `cd site && npm install && npm run build`.
