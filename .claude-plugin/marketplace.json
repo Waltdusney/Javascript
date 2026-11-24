@@ -1,11 +1,27 @@
 {
   "name": "waltdusney-trading",
-  "owner": { "name": "waltdusney" },
+  "owner": {
+    "name": "waltdusney"
+  },
   "plugins": [
     {
       "name": "day-trader-skill",
       "source": "./",
       "description": "12 day-trading skills: 11 from Jakeschincariol/day-trader-skill (MIT) plus trader-premarket."
+    },
+    {
+      "name": "taste-skill",
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      },
+      "description": "Third-party (Leonxlnx/taste-skill, MIT): builds polished, non-generic websites and landing pages, checked in a real browser.",
+      "skills": [
+        "./skills/taste-skill"
+      ],
+      "homepage": "https://github.com/Leonxlnx/taste-skill",
+      "license": "MIT",
+      "strict": false
     }
   ]
 }
