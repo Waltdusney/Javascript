@@ -1,0 +1,230 @@
+<title>Grey Instagram Plan</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..600&family=Jost:wght@400..600&display=swap">
+<style>
+/* Layout: one reading column with wide bands for the profile mock, the avatar row and the 3x3 grid. */
+:root {
+  --bg: #e7e6e3; --surface: #dcdbd7; --card: #f2f1ee; --fg: #161616; --muted: #5d5d5b; --line: #c9c8c4;
+  --ash: #c9c8c4; --stone: #9c9a95; --slate: #6c6f72; --graphite: #2e2f30; --chip-ink: #e7e6e3;
+  --display: "EB Garamond", Georgia, serif; --text: "Jost", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #161616; --surface: #1f1f1f; --card: #232323; --fg: #e7e6e3; --muted: #a3a29f; --line: #3a3a39; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #161616; --surface: #1f1f1f; --card: #232323; --fg: #e7e6e3; --muted: #a3a29f; --line: #3a3a39; color-scheme: dark }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--text); margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-block: 56px 96px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 72px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 400; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; }
+h2 { font-size: clamp(28px, 3.4vw, 38px); line-height: 1.15; }
+h3 { font-size: 22px; line-height: 1.25; }
+p { margin: 0; max-width: 66ch; }
+.lead { font-size: 19px; color: var(--fg); }
+.label { font-size: 13px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 24px; }
+.muted { color: var(--muted); }
+ul.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 6px; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; display: grid; gap: 12px; min-width: 0; }
+code, .mono { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 14px; }
+/* profile mock */
+.profile { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: center; }
+.profile .bio { display: grid; gap: 4px; }
+.profile .handle { font-weight: 600; font-size: 18px; }
+.stats { display: flex; gap: 24px; font-size: 15px; } .stats b { font-weight: 600; }
+.highlights { display: flex; flex-wrap: wrap; gap: 18px; }
+.hl { display: grid; justify-items: center; gap: 6px; font-size: 13px; }
+.hl i { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font: italic 400 18px var(--display); background: var(--surface); }
+/* avatars */
+.avatars { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; }
+.av { display: grid; gap: 12px; align-content: start; }
+.circle { width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center; overflow: hidden; border: 1px solid var(--line); }
+.c1 { background: var(--ash); color: #161616; font: 400 40px/1 var(--display); letter-spacing: -0.01em; }
+.c2 { background: var(--graphite); color: var(--chip-ink); font: 400 72px/1 var(--display); }
+.c3 { background: var(--stone); }
+.c3 svg { width: 56px; height: 56px; fill: #161616; }
+.c4 { background: conic-gradient(var(--ash) 0 25%, var(--stone) 0 50%, var(--slate) 0 75%, var(--graphite) 0); }
+.c4 span { width: 70%; height: 70%; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font: 400 30px/1 var(--display); color: var(--fg); }
+.small { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; display: grid; place-items: center; }
+/* grid mock */
+.grid9 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; max-width: 640px; }
+.tile { aspect-ratio: 4 / 5; padding: 12px; display: flex; flex-direction: column; justify-content: space-between; font-size: 13px; line-height: 1.35; color: #161616; }
+.tile b { font: 400 17px/1.2 var(--display); }
+.tile.d { color: var(--chip-ink); }
+.t1 { background: var(--graphite); } .t2 { background: var(--ash); } .t3 { background: var(--stone); }
+.t4 { background: var(--slate); } .t5 { background: var(--ash); } .t6 { background: var(--graphite); }
+.t7 { background: var(--stone); } .t8 { background: var(--graphite); } .t9 { background: var(--ash); }
+@media (max-width: 520px) { .tile { font-size: 11px; padding: 8px; } .tile b { font-size: 14px; } }
+/* tables */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; }
+table { border-collapse: collapse; width: 100%; min-width: 720px; font-size: 15px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; font-weight: 500; color: var(--muted); background: var(--surface); }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tier { display: inline-block; padding: 1px 8px; border-radius: 99px; font-size: 12px; font-weight: 500; border: 1px solid var(--line); white-space: nowrap; }
+.tier.micro { background: var(--ash); color: #161616; } .tier.mid { background: var(--stone); color: #161616; } .tier.large { background: var(--graphite); color: var(--chip-ink); }
+.caption { background: var(--card); border-left: 3px solid var(--slate); padding: 12px 16px; border-radius: 0 10px 10px 0; font-size: 15px; }
+.split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--muted); }
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:16px">
+    <p class="label">Grey · Instagram plan · drop one</p>
+    <h1>Setting up @grey before the first drop</h1>
+    <p class="lead">How to set up Grey's Instagram, what to post for the first month, and who to work with. Built from the Grey marketing brief, the social and influencer-marketing skills, and research on the brands and creators you named.</p>
+  </header>
+
+  <section>
+    <p class="label">1 · Where Grey sits</p>
+    <h2>Cole Henry's weight, Angel Boy's tailoring, one colour</h2>
+    <div class="cols">
+      <div class="panel"><h3>Joshua Mohamed</h3><p>New York, since 2020. Cropped hoodies, wide-leg and flare sweats, embroidered JM logos. Hoodies about $100 to $125.</p><p class="muted">Take: the relaxed bottoms. Leave: the logo.</p></div>
+      <div class="panel"><h3>Cole Henry</h3><p>Heavyweight boxy "blanks" (400 GSM fleece), monthly drops. Blank hoodie $70, zip $80.</p><p class="muted">Take: fabric weight and boxy fit.</p></div>
+      <div class="panel"><h3>Angel Boy</h3><p>Sydney, since 2024, by Will Stokoe. "Formal streetwear": pinstripe and pleated trousers, henleys. Trousers $179 to $229.</p><p class="muted">Take: one dressed-up piece per drop (Grey's pleated trouser).</p></div>
+    </div>
+    <p>Grey's line in one sentence: <b>heavyweight basics and one tailored piece per drop, all in four greys, with no logo on the chest.</b> None of the three owns a single colour; that is the gap.</p>
+  </section>
+
+  <section>
+    <p class="label">2 · The profile</p>
+    <h2>Set up the account</h2>
+    <div class="panel">
+      <div class="profile">
+        <div class="circle c2" style="width:96px;height:96px;font-size:52px" role="img" aria-label="Profile picture: a serif G on graphite">G</div>
+        <div class="bio">
+          <span class="handle">grey</span>
+          <div class="stats"><span><b>9</b> posts</span><span><b>0</b> followers</span><span><b>40</b> following</span></div>
+          <span><b>Grey</b> · Clothing (brand)</span>
+          <span>Heavyweight basics in four greys.</span>
+          <span>Drop one: tee, hoodie, sweatpant, trouser.</span>
+          <span>Waitlist ↓</span>
+          <span class="muted">grey.example/waitlist</span>
+        </div>
+      </div>
+      <div class="highlights" aria-label="Story highlights">
+        <span class="hl"><i>1</i>Drop one</span><span class="hl"><i>f</i>Fits</span><span class="hl"><i>~</i>Fabric</span><span class="hl"><i>g</i>Greys</span><span class="hl"><i>↓</i>Waitlist</span>
+      </div>
+    </div>
+    <div class="split">
+      <div class="panel"><h3>Handle</h3><p>Try in order: <code>grey</code> (almost certainly taken), <code>greyclo</code>, <code>wearegrey</code>, <code>grey.basics</code>, <code>greythelabel</code>. Use the same handle on TikTok and the domain. I could not check availability; Instagram's sign-up shows it instantly.</p></div>
+      <div class="panel"><h3>Account settings</h3><ul class="plain"><li>Switch to a <b>Business</b> account, category "Clothing (Brand)", for insights and the shop later</li><li>Name field: <code>Grey | Menswear</code>, so "menswear" is searchable</li><li>One link: the waitlist page; no link-in-bio tool until there is more than one thing to link</li><li>Turn off cross-posting to Facebook for now; keep the effort on one channel</li></ul></div>
+      <div class="panel"><h3>Bio rules</h3><ul class="plain"><li>Say what it is, then what's next, then the link</li><li>No emoji bullets, no "elevated" or "luxury"</li><li>Change line 3 when the drop date is set, for example "Drop one · March 12 · 6pm"</li></ul></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">3 · Profile picture</p>
+    <h2>Four ideas, judged at 44 px</h2>
+    <p>The picture shows at about 110 px on a profile and 44 px next to a comment, so it has to read tiny. Upload 320 × 320 or larger, keep the mark in the middle 70% for the circle crop, and use the same picture everywhere.</p>
+    <div class="avatars">
+      <div class="av"><div class="circle c2" role="img" aria-label="Serif G on graphite">G</div><div class="small c2" style="font-size:24px" aria-hidden="true">G</div><h3>1. Serif G on Graphite</h3><p>EB Garamond capital G in Ash on the darkest grey. Reads at any size and stands out in a feed of faces. <b>Recommended.</b></p></div>
+      <div class="av"><div class="circle c1" role="img" aria-label="Grey wordmark on ash">Grey</div><div class="small c1" style="font-size:14px" aria-hidden="true">Grey</div><h3>2. Wordmark on Ash</h3><p>The full word, the way the site's footer sets it. Clear, but small at 44 px; better as the first post than the avatar.</p></div>
+      <div class="av"><div class="circle c3" role="img" aria-label="Arch mark on stone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 21.5V12a9.5 9.5 0 0 1 19 0v9.5h-6V12a3.5 3.5 0 0 0-7 0v9.5z"/></svg></div><div class="small c3" aria-hidden="true"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:#161616"><path d="M2.5 21.5V12a9.5 9.5 0 0 1 19 0v9.5h-6V12a3.5 3.5 0 0 0-7 0v9.5z"/></svg></div><h3>3. The arch mark on Stone</h3><p>The site's arch mark alone. Good if you later want a mark that works on a woven label and a hang tag.</p></div>
+      <div class="av"><div class="circle c4" role="img" aria-label="Four grey quarters around a G"><span>G</span></div><div class="small c4" aria-hidden="true"></div><h3>4. Four greys around a G</h3><p>The four shades as a ring. Tells the colour story, but busier; at 44 px it reads as a pie chart.</p></div>
+    </div>
+    <p class="muted">Later, once the clothes exist: a close-up of the hoodie's fabric in Graphite also works, cropped tight so it reads as texture, never a person's face.</p>
+  </section>
+
+  <section>
+    <p class="label">4 · The look of the feed</p>
+    <h2>Rules that keep the grid looking like one brand</h2>
+    <div class="cols">
+      <div class="panel"><h3>Colour and grade</h3><p>Only the four greys plus skin, denim and wood. One preset on every photo: low contrast, slightly warm, no heavy film grain. Shoot outdoors at golden hour or by a window.</p></div>
+      <div class="panel"><h3>What's in the photos</h3><p>Full-length fits with the legs and shoes in shot, mirror fit checks, close-ups of fabric and seams, flat lays on concrete or a white sheet. Faces optional; posture and fit matter more.</p></div>
+      <div class="panel"><h3>Captions</h3><p>Short, lowercase allowed, one fact per caption: the piece, the fit or the date. 3 to 5 hashtags at most. No em dashes, no "Agree?", no emoji bullets.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">5 · The first nine posts</p>
+    <h2>Post these before the drop, in this order</h2>
+    <p>Post 1 lands bottom-right of the grid, so the finished nine read top-left to bottom-right as the launch story. Post 3 a week for three weeks; Reels where marked.</p>
+    <div class="grid9" role="img" aria-label="A three by three grid of planned posts in four greys">
+      <div class="tile t1 d"><b>Drop one</b><span>Reel · the 4 pieces folded, one shot each</span></div>
+      <div class="tile t2"><b>Date</b><span>The drop date, set large in serif</span></div>
+      <div class="tile t3"><b>Trouser</b><span>Carousel · pleat, leg, waistband</span></div>
+      <div class="tile t4 d"><b>Fit check</b><span>Reel · tee + trouser, mirror</span></div>
+      <div class="tile t5"><b>Hoodie</b><span>Carousel · weight, hood, cuff</span></div>
+      <div class="tile t6 d"><b>Sample day</b><span>Reel · first samples arriving</span></div>
+      <div class="tile t7"><b>Four greys</b><span>Swatches on fabric, named</span></div>
+      <div class="tile t8 d"><b>Boxy tee</b><span>Close-up · shoulder seam</span></div>
+      <div class="tile t9"><b>Grey</b><span>Post 1 · the wordmark, waitlist link in bio</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">6 · Every week after</p>
+    <h2>Content pillars and cadence</h2>
+    <div class="table-scroll"><table>
+      <thead><tr><th>Pillar</th><th>Share</th><th>What it looks like</th><th>Format</th></tr></thead>
+      <tbody>
+        <tr><td>Fits</td><td class="num">35%</td><td>One piece styled three ways; "fits of the week" carousel on Sundays</td><td>Carousel, Reel</td></tr>
+        <tr><td>The making</td><td class="num">25%</td><td>Samples, fabric weights, the pleat being pressed, choosing a grey</td><td>Reel, Stories</td></tr>
+        <tr><td>Product detail</td><td class="num">20%</td><td>Seams, cuffs, fabric close-ups, flat lays</td><td>Carousel</td></tr>
+        <tr><td>Community</td><td class="num">15%</td><td>Reposts of people wearing Grey (after the drop), creator collabs</td><td>Stories, Reels</td></tr>
+        <tr><td>Drop news</td><td class="num">5%</td><td>Date, sizes, restock</td><td>Static post, Stories</td></tr>
+      </tbody>
+    </table></div>
+    <div class="split">
+      <div class="panel"><h3>Cadence that's realistic for one founder</h3><ul class="plain"><li>3 feed posts a week, 2 of them Reels</li><li>Stories most days: polls ("Ash or Slate for the hoodie?"), behind-the-scenes</li><li>Post around 11am to 1pm or 7 to 9pm, then reply to every comment in the first hour</li><li>30 minutes a day commenting on posts from the creators below and on accounts that tag Cole Henry and Angel Boy</li></ul></div>
+      <div class="panel"><h3>Caption examples</h3><p class="caption">drop one. four pieces, four greys. waitlist in bio.</p><p class="caption">the boxy tee, heavyweight jersey, dropped shoulder. in ash.</p><p class="caption">pleated trouser with the tee. that's the whole outfit.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">7 · Creators</p>
+    <h2>How to work with creators at Grey's stage</h2>
+    <div class="cols">
+      <div class="panel"><h3>Start with gifting to micro creators</h3><p>Send 10 to 20 micro creators (10k to 50k followers) a free piece with no obligation to post. Micro creators convert better per follower than big accounts and cost product, not fees. Paid posts at this tier run roughly $100 to $1,500 each.</p></div>
+      <div class="panel"><h3>Write to them one by one</h3><p>Name a specific post of theirs and why Grey fits it. Ask their size. One short message, one follow-up a week later, then stop.</p></div>
+      <div class="panel"><h3>Required, every time</h3><p>Any free product or payment must be disclosed: "#ad" or "gifted" where people see it, plus Instagram's paid-partnership label. Give each creator their own code (e.g. <code>ANTON10</code>) to measure sales. If you pay, buy the right to reuse their video as an ad for 3 to 6 months.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="label">8 · The creator list</p>
+    <h2>19 creators in this look</h2>
+    <p>16 are verified with a follower count; 3 have a confirmed handle but no count I could find. I stopped at 19 rather than add names I couldn't check. Counts are third-party snapshots from 2025 to 2026, so check each profile before you reach out. Your own references: antownnn (~9k–15k), masonwkass (~52k–63k), caficosta_ (~190k), ethan_kieffer (~237k), braydenstiles (~75k–83k). I couldn't identify "Shane Williams" without a handle.</p>
+    <div class="table-scroll"><table>
+      <thead><tr><th>#</th><th>Creator</th><th>Handle</th><th>Followers</th><th>Tier</th><th>Why they fit Grey</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>Matt Tapley</td><td class="mono">@matt_tapley</td><td class="num">~12k–13k</td><td><span class="tier micro">micro</span></td><td>London, smart-casual menswear and lifestyle</td></tr>
+        <tr><td class="num">2</td><td>Shreyas Gaikwad</td><td class="mono">@shreyas_gg</td><td class="num">~20k+</td><td><span class="tier micro">micro</span></td><td>Mumbai, "minimal and baggy fits"</td></tr>
+        <tr><td class="num">3</td><td>Philip Conradsson</td><td class="mono">@conradssonphilip</td><td class="num">~57k</td><td><span class="tier micro">micro</span></td><td>Stockholm, refined menswear, runs his own label</td></tr>
+        <tr><td class="num">4</td><td>Kim Andersen</td><td class="mono">@kiimandersen</td><td class="num">~126k–138k</td><td><span class="tier mid">mid</span></td><td>Bio: "Simple menswear, Copenhagen"</td></tr>
+        <tr><td class="num">5</td><td>Diogo Duarte</td><td class="mono">@_duarte2</td><td class="num">~157k</td><td><span class="tier mid">mid</span></td><td>Lisbon, "simple chic"; posts with caficosta_</td></tr>
+        <tr><td class="num">6</td><td>Avnish Panesar</td><td class="mono">@mr.panesar.archived</td><td class="num">~170k–180k</td><td><span class="tier mid">mid</span></td><td>UK "slow menswear", recent-fits roundups</td></tr>
+        <tr><td class="num">7</td><td>Anvit Oberoi</td><td class="mono">@anvitoberoi</td><td class="num">~241k</td><td><span class="tier mid">mid</span></td><td>Delhi, polished but relaxed</td></tr>
+        <tr><td class="num">8</td><td>Elliot Duprey</td><td class="mono">@elliot_duprey</td><td class="num">~397k</td><td><span class="tier mid">mid</span></td><td>Calm, restrained essentials</td></tr>
+        <tr><td class="num">9</td><td>George Armstrong</td><td class="mono">@georgetarmstrong_</td><td class="num">~418k</td><td><span class="tier mid">mid</span></td><td>UK, affordable smart streetwear</td></tr>
+        <tr><td class="num">10</td><td>Marco Leisten</td><td class="mono">@marco.lstn</td><td class="num">~400k–436k</td><td><span class="tier mid">mid</span></td><td>Timeless pieces, minimal styling</td></tr>
+        <tr><td class="num">11</td><td>Isaiah Stolp</td><td class="mono">@isaiahstolp_</td><td class="num">~562k</td><td><span class="tier mid">mid</span></td><td>"Fits of the week" carousels, relaxed and vintage</td></tr>
+        <tr><td class="num">12</td><td>Jesper Søndergaard</td><td class="mono">@jespersoendergaard</td><td class="num">~970k</td><td><span class="tier large">large</span></td><td>Copenhagen, classic menswear meeting streetwear</td></tr>
+        <tr><td class="num">13</td><td>Sergio Inês</td><td class="mono">@whatmyboyfriendwore</td><td class="num">~1M</td><td><span class="tier large">large</span></td><td>Wardrobe building, the "old money" side</td></tr>
+        <tr><td class="num">14</td><td>Hunter Vought</td><td class="mono">@huntervought</td><td class="num">~1.2M</td><td><span class="tier large">large</span></td><td>Menswear styling and grooming</td></tr>
+        <tr><td class="num">15</td><td>Daniel Simmons</td><td class="mono">@imdanielsimmons</td><td class="num">~1.2M–1.3M</td><td><span class="tier large">large</span></td><td>Neutral minimalism; runs his own label, the closest model for Grey</td></tr>
+        <tr><td class="num">16</td><td>Josh Heuston</td><td class="mono">@jheuston</td><td class="num">~1.5M</td><td><span class="tier large">large</span></td><td>Sydney, physique plus fashion</td></tr>
+        <tr><td class="num">17</td><td>Jai Waetford</td><td class="mono">@jaiwaetford</td><td class="num">not found</td><td><span class="tier">check</span></td><td>Sydney; tags Angel Boy (964k on YouTube)</td></tr>
+        <tr><td class="num">18</td><td>Ethan Lazarof</td><td class="mono">@ethanlazarof</td><td class="num">not found</td><td><span class="tier">check</span></td><td>Sydney creator, featured by Fashion Journal</td></tr>
+        <tr><td class="num">19</td><td>Fredrik Risvik</td><td class="mono">@fredrikrisvik</td><td class="num">not found</td><td><span class="tier">check</span></td><td>Norway, Scandinavian minimalism and basics</td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">The best place to find more micro creators: open @angelboyclo, @colehenryblanks and @wrongsense on Instagram and look at the "tagged" tab. That's where small accounts with exactly this look show up.</p>
+  </section>
+
+  <section>
+    <p class="label">9 · Next steps</p>
+    <h2>This week</h2>
+    <ul class="plain">
+      <li>Claim the handle on Instagram and TikTok, and the matching domain</li>
+      <li>Set the profile picture (idea 1) and the bio above; link the waitlist</li>
+      <li>Order samples; photograph them in daylight for posts 3 to 8</li>
+      <li>Connect the website's waitlist form to an email service (Klaviyo, Mailchimp or Shopify) before sharing the link</li>
+      <li>Shortlist 10 micro creators from the tagged tabs and the table; check their last 3 months of posts and engagement</li>
+    </ul>
+  </section>
+</div>
