@@ -60,3 +60,15 @@ fetched from upstream on install, not copied into this repo:
 
 It needs Node 22+ and Chrome/Chromium for its browser checks, and it adds a Stop hook
 that runs its finish gate.
+
+## marketing-skills (third-party, via this marketplace)
+
+The marketplace also lists [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
+(MIT), 53 marketing skills: CRO, copywriting, SEO and AI SEO, paid ads, cold email,
+pricing, launches, analytics, referrals and more. Most skills read the `product-marketing`
+skill's context first, so start there. It is fetched from upstream on install, not copied
+into this repo:
+
+```
+/plugin install marketing-skills@waltdusney-trading
+```
