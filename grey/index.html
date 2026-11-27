@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" data-type="product" data-radius="soft" data-buttons="pill" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grey: heavyweight menswear basics, all in grey</title>
+<meta name="description" content="Grey is a new menswear label. Drop one is a boxy tee, a hoodie, a sweatpant and a pleated trouser in four shades of grey. Join the waitlist.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Grey: heavyweight menswear basics, all in grey">
+<meta property="og:description" content="Drop one: four pieces in four greys. Join the waitlist.">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#e7e6e3">
+<!-- <link rel="canonical" href="https://[the client's domain]/"> : no domain yet -->
+<meta name="site-kind" content="other">
+<meta name="page-type" content="product">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400..700&family=Jost:wght@400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<style>
+:root {
+  --p-bg: #e7e6e3; --p-surface: #dcdbd7; --p-ink: #161616; --p-muted: #5d5d5b;
+  --p-accent: #3b3b39; --p-accent-ink: #e7e6e3; --p-action: #3b3b39; --p-action-ink: #e7e6e3;
+  --p-inv-bg: #161616; --p-inv-surface: #222222; --p-inv-ink: #e7e6e3; --p-inv-muted: #8f8f8d;
+  --p-inv-accent: #e7e6e3; --p-inv-accent-ink: #161616; --p-inv-action: #e7e6e3; --p-inv-action-ink: #161616;
+  --font-display: "EB Garamond", Georgia, serif;
+  --font-text: "Jost", system-ui, sans-serif;
+  --display-weight: 400;
+  --display-tracking: -0.012em;
+  --display-tracking-xl: -0.018em;
+  --ly-scale: 1.12;
+}
+</style>
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
+<link rel="modulepreload" href="assets/moments/moments.js">
+<link rel="modulepreload" href="assets/moments/lib.js">
+<link rel="modulepreload" href="assets/moments/word-highlight/moment.js">
+<!-- page CSS: the four swatches (flat colour inside a visual), the drop's photograph, the waitlist form's width -->
+<style>
+  .swatch { display: grid; gap: var(--s-3); }
+  .swatch__chip { aspect-ratio: 1; border-radius: var(--r-lg); background: var(--chip); border: 1px solid var(--line); }
+  .swatch__name { font: var(--display-weight) var(--t-h3)/1.2 var(--font-display); }
+  .footer__nav { border-top: 0; padding-top: 0; }
+  .close__word { font-size: clamp(64px, 13vw, 200px); line-height: 1.05; padding-top: .04em; }
+  @media (max-width: 1023px) { .close__word { font-size: 25vw; } }
+  @media (max-width: 639px) { .close__word { font-size: 20vw; } }
+  .hero--statement h1 { max-width: none; }
+  .waitlist .form { grid-template-columns: minmax(0, 1fr); }
+  .waitlist .field input { background: var(--bg); color: var(--ink); border-color: var(--line-strong); }
+  #about .mo-wh__text { font-size: clamp(30px, 3.4vw, 50px); line-height: 1.14; max-width: 1040px; }
+  #about .t-label { margin: 0 0 var(--s-5); }
+  @media (max-width: 1023px) {
+    #greys .grid > .span-3 { grid-column: auto / span 6; }
+    #greys .swatch__chip { aspect-ratio: 2 / 1; }
+    #drop .pl-photo > img { width: min(100%, 500px); margin-left: 0; }
+  }
+  @media (max-width: 639px) {
+    #greys .grid > .span-3 { grid-column: auto / span 6; }
+    #greys .swatch p:not(.swatch__name) { display: none; }
+    #greys .swatch__chip { aspect-ratio: 1; }
+    #drop .pl-photo > img { width: 100%; aspect-ratio: 3 / 1; }
+  }
+</style>
+</head>
+<body>
+<!-- type: product (a menswear label before its first drop; no product or photographs yet)
+     deal: hero statement (re-dealt: the founder chose a type-led page, no lead photograph), nav nav-split (re-dealt from
+           nav-cards: no photographs), close close-word (re-dealt from close-photo: no photograph), footer footer-dark,
+           rhythm brand-band (dropped: the waitlist joined the dark close), buttons pill, mark arc
+     palette: the brand's own greys (start.mjs brand), type garamond (EB Garamond / Jost), radius soft
+     moments: word-highlight in #about
+     screens at 1440: hero 1, drop 1, greys 1, about 1, footer.closing 1 (the waitlist form) -->
+<header class="nav nav--split">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">Skip to content</a>
+    <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Grey</a>
+    <nav class="nav__links" aria-label="Main">
+      <div class="nav__item"><a class="nav__link" href="#drop">Drop</a></div>
+      <div class="nav__item"><a class="nav__link" href="#greys">Colours</a></div>
+      <div class="nav__item"><a class="nav__link" href="#about">About</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#waitlist">Join the waitlist</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero hero--statement" data-enter aria-labelledby="hero-h">
+    <div class="wrap"><div class="hero-text hero__in">
+      <div>
+        <h1 id="hero-h">Heavyweight menswear basics, all in grey</h1>
+        <p class="hero__lead">Grey is a new menswear label. Drop one is 4 pieces: a boxy tee, a hoodie, a sweatpant and a pleated trouser, in 4 shades of grey that all go together.</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#waitlist">Join the waitlist</a><a class="btn btn--secondary" href="#drop">See drop one</a></div>
+      </div>
+      <dl class="hero__facts">
+        <div><dt>Drop one</dt><dd>4 pieces</dd></div>
+        <div><dt>Colours</dt><dd>Ash, Stone, Slate, Graphite</dd></div>
+        <div><dt>Fit</dt><dd>Boxy tops, relaxed legs</dd></div>
+        <div><dt>Branding</dt><dd>No chest logo</dd></div>
+      </dl>
+    </div></div>
+  </section>
+
+  <section class="section" id="drop" aria-labelledby="drop-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="drop-h">Drop one. <span class="muted">Four pieces you can wear together.</span></h2>
+      </div>
+      <div class="grid grid--top">
+        <ul class="rows span-6">
+          <li><span class="rows__name">Boxy tee</span><span class="rows__value">Tops</span><p>Heavyweight cotton jersey, dropped shoulder, cut to sit at the hip.</p></li>
+          <li><span class="rows__name">Hoodie</span><span class="rows__value">Tops</span><p>Heavy cotton fleece, a boxy body and a double-layer hood, with no chest logo.</p></li>
+          <li><span class="rows__name">Sweatpant</span><span class="rows__value">Bottoms</span><p>Relaxed straight leg with an open hem and deep side pockets.</p></li>
+          <li><span class="rows__name">Pleated trouser</span><span class="rows__value">Bottoms</span><p>Single pleat and a wide leg, worn with the tee or under a knit.</p></li>
+        </ul>
+        <figure class="pl-photo pl-photo--end span-6 start-7" style="--pl-r: 1.3333; --pl-cap: 360px"><img src="assets/img/photo-f3037784-500.webp" width="500" height="375" alt="Close-up of grey-brown cotton jersey folded over itself" loading="lazy" decoding="async" data-source="stand-in" data-subject="fabric"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ground-surface" id="greys" aria-labelledby="greys-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="greys-h">Four greys. <span class="muted">Every piece comes in each of them.</span></h2>
+      </div>
+      <div class="grid">
+        <div class="swatch span-3" style="--chip: #c9c8c4"><div class="swatch__chip" role="img" aria-label="Ash, a light grey"></div><p class="swatch__name">Ash</p><p>A light grey, close to washed concrete.</p></div>
+        <div class="swatch span-3" style="--chip: #9c9a95"><div class="swatch__chip" role="img" aria-label="Stone, a warm mid grey"></div><p class="swatch__name">Stone</p><p>A warm mid grey with a little brown in it.</p></div>
+        <div class="swatch span-3" style="--chip: #6c6f72"><div class="swatch__chip" role="img" aria-label="Slate, a cool dark grey"></div><p class="swatch__name">Slate</p><p>A cool darker grey with a hint of blue.</p></div>
+        <div class="swatch span-3" style="--chip: #2e2f30"><div class="swatch__chip" role="img" aria-label="Graphite, a grey close to black"></div><p class="swatch__name">Graphite</p><p>Almost black, softer than black in daylight.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section statement" id="about" data-moment="word-highlight" aria-label="About Grey">
+    <div class="wrap">
+      <p class="t-label">Why grey</p>
+      <p class="mo-wh__text">One colour in four shades, so every piece goes with <strong>every other piece</strong>. Fewer clothes, worn more often, with nothing printed across the chest.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta close--word" id="waitlist">
+      <div class="grid grid--top waitlist">
+        <div class="span-6">
+          <h2 id="close-h">Join the waitlist for drop one</h2>
+          <p class="t-lead">One email when the date is set, and one on the day it opens.</p>
+        </div>
+        <form class="form span-6 start-7" action="mailto:hello@grey.example" method="post" enctype="text/plain" data-endpoint="" novalidate>
+          <div class="field"><label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+            <p class="field__error" id="f-email-err" hidden>Write an email address with an @, like name@example.com.</p></div>
+          <div class="btn-row"><button class="btn btn--primary" type="submit">Join the waitlist</button></div>
+          <p class="form__status" role="status" data-form-status></p>
+        </form>
+      </div>
+      <p class="close__word" aria-hidden="true">Grey</p>
+    </div>
+    <div class="closing__links">
+      <nav class="footer__nav" aria-label="Footer">
+        <a class="nav__logo" href="#top"><span class="mark" data-mark="arc" aria-hidden="true"></span>Grey</a>
+        <a href="#drop">Drop</a>
+        <a href="#greys">Colours</a>
+        <a href="#about">About</a>
+      </nav>
+      <div class="footer__legal">
+        <span>&copy; 2026 Grey</span>
+        <details class="credits"><summary>Photograph via Wikimedia Commons</summary><p><a href="https://commons.wikimedia.org/wiki/File:Singlejersey.jpg">teslar</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>.</p></details>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+</body>
+</html>
