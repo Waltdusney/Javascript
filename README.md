@@ -66,8 +66,14 @@ that runs its finish gate.
 The marketplace also lists [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills)
 (MIT), 53 marketing skills: CRO, copywriting, SEO and AI SEO, paid ads, cold email,
 pricing, launches, analytics, referrals and more. Most skills read the `product-marketing`
-skill's context first, so start there. It is fetched from upstream on install, not copied
-into this repo:
+skill's context first, so start there.
+
+A copy of the skills (upstream commit `2bf95ed`, license in
+`.claude/skills/LICENSE-marketingskills`) also lives in `.claude/skills/`, so in sessions
+opened on this repo they are plain slash commands: `/product-marketing`, `/copywriting`,
+`/seo-audit`, and so on. That copy does not update itself; re-copy from upstream to refresh it.
+
+To use them in other projects, install the plugin, which is fetched from upstream:
 
 ```
 /plugin install marketing-skills@waltdusney-trading

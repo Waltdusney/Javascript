@@ -10,5 +10,18 @@
     "day-trading",
     "paper-trading"
   ],
-  "skills": "./.claude/skills/"
+  "skills": [
+    "./.claude/skills/trader-alerts",
+    "./.claude/skills/trader-analyst",
+    "./.claude/skills/trader-broker",
+    "./.claude/skills/trader-budget",
+    "./.claude/skills/trader-entry",
+    "./.claude/skills/trader-exit",
+    "./.claude/skills/trader-news",
+    "./.claude/skills/trader-pelosi",
+    "./.claude/skills/trader-premarket",
+    "./.claude/skills/trader-risk",
+    "./.claude/skills/trader-scanner",
+    "./.claude/skills/trader-timemachine"
+  ]
 }
