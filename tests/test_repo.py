@@ -35,9 +35,17 @@ def every_text_file():
 class Repo(unittest.TestCase):
     def test_skill_folders_under_skills(self):
         # the eleven upstream skills plus this repo's own trader-premarket
+        # (the vendored marketingskills folders live here too and are not part of the plugin)
         found = sorted(d for d in os.listdir(ROOT)
-                       if os.path.isfile(os.path.join(ROOT, d, "SKILL.md")))
+                       if d.startswith("trader-") and os.path.isfile(os.path.join(ROOT, d, "SKILL.md")))
         self.assertEqual(found, sorted(SKILLS + ["trader-premarket"]))
+
+    def test_plugin_manifest_lists_only_the_trader_skills(self):
+        repo = os.path.dirname(os.path.dirname(ROOT))
+        with open(os.path.join(repo, ".claude-plugin", "plugin.json"), encoding="utf-8") as fh:
+            listed = json.load(fh)["skills"]
+        self.assertEqual(sorted(listed),
+                         sorted("./.claude/skills/" + s for s in SKILLS + ["trader-premarket"]))
 
     def test_frontmatter_name_and_description(self):
         for s in SKILLS:
